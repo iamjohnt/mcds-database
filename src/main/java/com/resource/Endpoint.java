@@ -31,26 +31,20 @@ public class Endpoint {
     }
 
     @GetMapping("/database/cases")
-    public CaseDataRecords getCaseDataRecords() {
+    public List<CaseData> getCaseDataRecords() {
         List<CaseData> records = dbService.getCaseDataList();
-        CaseDataRecords wrapper = new CaseDataRecords();
-        wrapper.setRecords(records);
-        return wrapper;
+        return records;
     }
 
     @GetMapping("/database/deaths")
-    public DeathDataRecords getDeathDataRecords() {
+    public List<DeathData> getDeathDataRecords() {
         List<DeathData> records = dbService.getDeathDataList();
-        DeathDataRecords wrapper = new DeathDataRecords();
-        wrapper.setRecords(records);
-        return wrapper;
+        return records;
     }
 
     @GetMapping("database/hospitalizations")
-    public HospDataRecords getHospDataRecords() {
+    public List<HospData>  getHospDataRecords() {
         List<HospData> records = dbService.getHospDataList();
-        HospDataRecords wrapper = new HospDataRecords();
-        wrapper.setRecords(records);
-        return wrapper;
+        return records;
     }
 }
